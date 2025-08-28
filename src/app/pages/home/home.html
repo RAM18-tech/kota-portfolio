@@ -1,0 +1,22 @@
+<div [ngStyle]="{
+  'background-image': 'url(' + backgroundImage + ')',
+  'background-size': 'cover',
+  'background-position': 'center',
+  'height': '100vh',
+  'width': '100%',
+  'position': 'relative'
+}">
+  <app-nav-bar></app-nav-bar>
+
+  <div class="hero-content">
+    <img [src]="profileImage" alt="Kota's portrait" class="profile-img" />
+    <h1>Hi, I'm Kota Kodanda Ram</h1>
+    <h2>Full Stack Developer focused on Angular, Spring , and SQL</h2>
+    <p>I craft scalable, modular web apps with cosmic clarity and UI precision.</p>
+
+    <div class="button-group">
+      <button routerLink="/project" class="secondary-btn">MY WORK</button>
+      <button routerLink="/contact" class="secondary-btn">CONTACT</button>
+    </div>
+  </div>
+</div>

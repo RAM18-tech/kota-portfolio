@@ -1,0 +1,40 @@
+<div [ngStyle]="{
+  'background-image': 'url(' + backgroundImage + ')',
+  'background-size': 'cover',
+  'background-position': 'center',
+  'height': '100vh',
+  'width': '100%',
+  'position': 'relative'
+}">
+<app-nav-bar></app-nav-bar>
+<div class="portfolio-container">
+  <!-- Left Feature Card -->
+  <div class="feature-card" [ngStyle]="{'background-image': 'url(' + featuredProject.image + ')'}">
+    <div class="overlay">
+      <h2>{{ featuredProject.name }}</h2>
+      <p>{{ featuredProject.tech }}</p>
+    </div>
+  </div>
+
+  <!-- Right Grid of Cards -->
+  <div class="project-grid">
+    <div
+      class="project-card"
+      *ngFor="let project of projects"
+      [ngStyle]="{'background-image': 'url(' + project.image + ')'}"
+      (click)="project.showLinks = !project.showLinks"
+    >
+      <div class="overlay">
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.tech }}</p>
+
+        <div *ngIf="project.showLinks" class="links">
+          <a [href]="project.github" target="_blank">GitHub</a>
+          <a [href]="project.website" target="_blank">Live Site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

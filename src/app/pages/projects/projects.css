@@ -1,0 +1,84 @@
+.portfolio-container {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+}
+
+.feature-card {
+  flex: 1;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.feature-card .overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 6px;
+  color: #cccccc;
+}
+
+.feature-card .overlay h2 {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+.feature-card .overlay p {
+  color: #cccccc;
+}
+
+.project-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.project-card .overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  color: #cccccc;
+}
+
+.project-card .overlay h3 {
+  color: #00ffff;
+  text-shadow: 0 0 6px #00ffff;
+}
+
+.project-card .overlay p {
+  color: #cccccc;
+}
+
+.project-card .overlay .links {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card .overlay .links a {
+  color: #f0db4f;
+  text-decoration: none;
+  margin-bottom: 5px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+

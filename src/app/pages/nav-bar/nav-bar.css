@@ -1,0 +1,23 @@
+.custom-navbar {
+  
+  padding: 10px 20px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  color: white;
+}
+
+.navbar-brand:hover {
+  text-shadow: 0 0 8px #4a90e2; 
+  color:#4a90e2;
+}
+.ram{
+  font-size: 30px;
+}
+
+
+

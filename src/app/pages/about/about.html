@@ -1,0 +1,67 @@
+<div [ngStyle]="{
+  'background-image': 'url(' + backgroundImage + ')',
+  'background-size': 'cover',
+  'background-position': 'center',
+  'height': '100vh',
+  'width': '100%',
+  'position': 'relative'
+}">
+  <app-nav-bar></app-nav-bar>
+
+  <div class="about-container">
+    <!-- Left Category Cards -->
+    <div class="left-panel">
+      <div
+        class="category-card"
+        *ngFor="let cat of categories"
+        [class.active]="selectedCategory === cat"
+        (click)="selectCategory(cat)"
+      >
+        {{ cat }}
+      </div>
+    </div>
+
+    <!-- Right Detail Card -->
+    <div class="right-panel">
+      <div class="detail-card">
+        <h2 class="tittle">{{ selectedCategory }}</h2>
+
+        <!-- Academic Block -->
+        <div *ngIf="selectedCategory === 'Academic'">
+          <div *ngFor="let edu of details.Academic" class="info-block">
+            <h3>{{ edu.title }}</h3>
+            <p>{{ edu.subtitle }}</p>
+            <p><strong>Tech:</strong> {{ edu.tech }}</p>
+            <p><em>{{ edu.status }}</em></p>
+          </div>
+        </div>
+
+        <!-- Professional Growth Block -->
+        <div *ngIf="selectedCategory === 'Professional Growth'">
+          <div *ngFor="let prof of details['Professional Growth']" class="info-block">
+            <h3>{{ prof.title }}</h3>
+            <p>{{ prof.subtitle }}</p>
+            <p><strong>Tech:</strong> {{ prof.tech }}</p>
+            <p><em>{{ prof.status }}</em></p>
+          </div>
+        </div>
+
+        <!-- Skills Block -->
+        <div *ngIf="selectedCategory === 'Skills'">
+          <ul>
+            <li *ngFor="let skill of details.Skills">{{ skill }}</li>
+          </ul>
+        </div>
+
+        <!-- Certificates Block -->
+        <div *ngIf="selectedCategory === 'Certificates'">
+          <div *ngFor="let cert of details.Certificates" class="info-block">
+            <h3>{{ cert.name }}</h3>
+            <p><strong>Issuer:</strong> {{ cert.issuer }}</p>
+            <p><em>Year: {{ cert.year }}</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
